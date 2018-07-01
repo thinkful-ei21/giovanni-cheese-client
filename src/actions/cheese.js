@@ -21,7 +21,7 @@ export const fetchCheesesError = (error) =>({
 
 export const fetchCheese = () => dispatch =>{
     dispatch(fetchCheesesRequest())
-    fetch(`${API_BASE_URL}/cheeses`)
+    fetch(`${API_BASE_URL}cheeses`)
     .then(res => !res.ok ? Promise.reject(res.statusText) : res.json())
     .then(res => dispatch(fetchCheesesSuccess(res)))
     .catch(err => dispatch(fetchCheesesError(err)))
